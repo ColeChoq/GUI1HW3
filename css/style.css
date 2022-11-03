@@ -29,9 +29,10 @@ td{
 
 /*Table*/
 table{
-    
-    width: 600px;
-    height: 600px;
+    height:auto;
+    width: auto;
+    max-width: 600px;
+    max-height: 600px;
     display:block;
     overflow-y: auto;
     margin-left: auto;
