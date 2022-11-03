@@ -90,14 +90,14 @@ function generateTable() {
     const tblBody = document.createElement("tbody");
   
     // creating all cells
-    for (let i = 0; i < Ccount + 2; i++) {
+    for (let i = 1; i <= Ccount + 2; i++) {
 
       // creates a table row
       const row = document.createElement("tr");
       //if first row - make each entry a header and leave first box blank
-      if(i==0){
-        for (let j = 0; j < Rcount + 2; j++) {
-            if(j==0){
+      if(i==1){
+        for (let j = 1; j <= Rcount + 2; j++) {
+            if(j==1){
                 //These four lines along with some at end of this function were taken from the source listed at the top
                 const cell = document.createElement("th");
                 const cellText = document.createTextNode(" ");
@@ -106,7 +106,7 @@ function generateTable() {
             }
             else{
                 const cell = document.createElement("th");
-                const cellText = document.createTextNode((j-1)+Number(RowMin));
+                const cellText = document.createTextNode((j-2)+Number(RowMin));
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
@@ -114,11 +114,11 @@ function generateTable() {
       }
       //if not first row -first column are headers - the rest are products
       else{
-        for (let j = 0; j < Rcount + 2; j++) {
+        for (let j = 1; j <= Rcount + 2; j++) {
             
-            if(j==0){
+            if(j==1){
                 const cell = document.createElement("th");
-                const cellText = document.createTextNode((i-1)+Number(ColMin));
+                const cellText = document.createTextNode((i-2)+Number(ColMin));
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
@@ -142,11 +142,11 @@ function generateTable() {
                     }
                 }
                 //The Squares^2 are YELLOW!
-                if(((j-1)+Number(ColMin))==((i-1)+Number(RowMin))){
+                if(((j-2)+Number(RowMin))==((i-2)+Number(ColMin))){
                     cell.setAttribute("style", "background-color: Yellow;")
                 }
 
-                const cellText = document.createTextNode(((j-1)+Number(ColMin))*((i-1)+Number(RowMin)));
+                const cellText = document.createTextNode(((j-2)+Number(RowMin))*((i-2)+Number(ColMin)));
                 cell.appendChild(cellText);
                 row.appendChild(cell);
             }
